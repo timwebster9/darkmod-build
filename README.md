@@ -1,6 +1,6 @@
 # Darkmod Docker Build
 
-Using Docker provides an isolated, immutable build environment for mulitple target platforms.  As you can see in the Dockerfile, all dependencies are part of the build image, removing the need for any local OS setup.  This could be expanded with other required binaries and dependencies.
+Using Docker provides an isolated, immutable build environment for multiple target platforms.  As you can see in the Dockerfile, all dependencies are part of the build image, removing the need for any local OS setup.  This could be expanded with other required binaries and dependencies.
 
 ## Step-by-step Guide
 
@@ -21,11 +21,11 @@ This uses the Docker image built in the previous step to build Darkmod.  The `-v
 
 Run the following command, substituting the path to your source for #SRC_DIR#
 
-    docker run -v #SRC_DIR#:/darkmod -w /darkmod darkmod-build:latest ./linuxBuild.sh
+    docker run -v #SRC_DIR#:/darkmod -w /darkmod --rm darkmod-build:latest ./linuxBuild.sh
 
 For example:
 
-    docker run -v /home/timw/projects/darkmod/src/trunk:/darkmod -w /darkmod darkmod-build:latest ./linuxBuild.sh
+    docker run -v /home/timw/projects/darkmod/src/trunk:/darkmod -w /darkmod --rm darkmod-build:latest ./linuxBuild.sh
 
 Clean:
 
@@ -33,4 +33,17 @@ Clean:
 
 ### Or use the Makefile
 
-Modify the paths in the Makefile as above to use the pre-defined targets.
+First modify the paths in the Makefile as above, and then you can use the pre-defined targets:
+
+Make the build image:
+
+    make
+
+Build darkmod:
+
+    make darkmod
+
+Clean:
+
+    make clean
+

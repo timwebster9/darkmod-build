@@ -1,10 +1,10 @@
-.DEFAULT=all
+.DEFAULT=image
 
-all:
+image:
 	docker build -t darkmod-build .
 
 darkmod:
-	docker run -v /home/timw/projects/darkmod/src/trunk:/darkmod -w /darkmod darkmod-build:latest ./linuxBuild.sh
+	docker run -v /home/timw/projects/darkmod/src/trunk:/darkmod -w /darkmod --rm darkmod-build:latest ./linuxBuild.sh
 
 clean:
-	docker run -v /home/timw/projects/darkmod/src/trunk:/darkmod -w /darkmod darkmod-build:latest scons -c
+	docker run -v /home/timw/projects/darkmod/src/trunk:/darkmod -w /darkmod --rm darkmod-build:latest scons -c
