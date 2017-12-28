@@ -1,13 +1,13 @@
 # Darkmod Docker Build
 
-Using Docker provides an isolated, immutable build environment for mulitple target platforms.  As you can see in the Dockerfile, all dependencies are part of the OS.  This could be expanded with other required binaries and dependencies.
+Using Docker provides an isolated, immutable build environment for mulitple target platforms.  As you can see in the Dockerfile, all dependencies are part of the build image, removing the need for any local OS setup.  This could be expanded with other required binaries and dependencies.
 
 ## Step-by-step Guide
 
 ### Install Docker
 Instructions for Ubuntu here: https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/
 
-Instructions for other distros (e.g. Debian, Mac, Fedora) are there on the left-hand pane.
+Instructions for other distros (e.g. Debian, Mac, Fedora, etc.) are there on the left-hand pane.
 
 ### Build the darkmod build image
 
