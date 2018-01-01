@@ -19,13 +19,13 @@ This is a one-off task, and the image will persist on disk until you explicitly 
 
 This uses the Docker image built in the previous step to build Darkmod.  The `-v` argument mounts your local Darkmod source directory inside the running container, making it available to the build environment.
 
-Run the following command, substituting the path to your source for #SRC_DIR#
+Run the following command, substituting the path to your source for #SRC_DIR#, and substituting the number of cores for #CORES#
 
-    docker run -v #SRC_DIR#:/darkmod -w /darkmod --rm darkmod-build:latest ./linuxBuild.sh
+    docker run -v #SRC_DIR#:/darkmod -w /darkmod --rm darkmod-build:latest scons BUILD="release" TARGET_ARCH="x64" -j#CORES#
 
 For example:
 
-    docker run -v /home/timw/projects/darkmod/src/trunk:/darkmod -w /darkmod --rm darkmod-build:latest ./linuxBuild.sh
+    docker run -v /home/timw/projects/darkmod/src/trunk:/darkmod -w /darkmod --rm darkmod-build:latest scons BUILD="release" TARGET_ARCH="x64" -j12
 
 Clean:
 
