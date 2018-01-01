@@ -13,6 +13,11 @@ RUN apt update \
                     subversion \
                     libc6-dev-i386 \
                     g++-multilib \
+                    libx11-dev \
+                    libxxf86vm-dev \
+                    libopenal-dev \
+                    libasound2-dev \
+                    libxext-dev \
                     libx11-dev:i386 \
                     libxxf86vm-dev:i386 \
                     libopenal-dev:i386 \
